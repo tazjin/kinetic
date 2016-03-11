@@ -15,6 +15,7 @@
 -export([get_shard_iterator/1, get_shard_iterator/2]).
 -export([merge_shards/1, merge_shards/2]).
 -export([put_record/1, put_record/2]).
+-export([put_records/2, put_records/3]).
 -export([split_shard/1, split_shard/2]).
 
 -include("kinetic.hrl").
@@ -196,6 +197,13 @@ put_record(Payload, Opts) when is_list(Opts) ->
 put_record(Payload, Timeout) ->
     put_record(Payload, [{timeout, Timeout}]).
 
+%% Put multiple records at the same time
+put_records(Records, StreamName) ->
+    put_records(Records, StreamName, []).
+put_records(Records, StreamName, Opts) ->
+    Payload = [{<<"StreamName">>, StreamName},
+               {<<"Records">>, Records}],
+    execute("PutRecords", Payload, Opts).
 
 %%
 %% Payload = [{<<"StreamName">>, binary()}, <- required
