@@ -48,7 +48,7 @@ stop(_) ->
 %%
 %% Payload = [{<<"ShardCount">>, integer()}, <- required
 %%            {<<"StreamName">>, binary()}] <- required
-%% 
+%%
 %% Response = {ok, []}
 create_stream(Payload) ->
     create_stream(Payload, []).
@@ -60,7 +60,7 @@ create_stream(Payload, Timeout) ->
 
 %%
 %% Payload = [{<<"StreamName">>, binary()}] <- required
-%% 
+%%
 %% Response = {ok, []}
 delete_stream(Payload) ->
     delete_stream(Payload, []).
@@ -121,7 +121,7 @@ describe_stream(Payload, Timeout) ->
 %%
 %% Payload = [{<<"Limit">>, integer()}, <- optional
 %%            {<<"ShardIterator">>, binary()}] <- required
-%% 
+%%
 %% Response = {ok, [
 %%  {<<"NextShardIterator">>, <<"AAAAAAAAAAHsW8zCWf9164uy8Epue6WS3w6wmj4a4USt+CNvMd6uXQ+HL5vAJMznqqC0DLKsIjuoiTi1BpT6nW0LN2M2D56zM5H8anHm30Gbri9ua+qaGgj+3XTyvbhpERfrezgLHbPB/rIcVpykJbaSj5tmcXYRmFnqZBEyHwtZYFmh6hvWVFkIwLuMZLMrpWhG5r5hzkE=">>},
 %%  {<<"Records">>, [{<<"Data">>, <<"XzxkYXRhPl8w">>},
@@ -140,7 +140,7 @@ get_records(Payload, Timeout) ->
 %%            {<<"ShardId">>, binary()},    <- required
 %%            {<<"ShardIteratorType">>, <<"AT_SEQUENCE_NUMBER | AFTER_SEQUENCE_NUMBER | TRIM_HORIZON | LATEST">>}, <- required
 %%            {<<"StartingSequenceNumber">>, binary()}] <- optional
-%% 
+%%
 %% Response = {ok, [
 %%  {<<"ShardIterator">>, <<"AAAAAAAAAAETYyAYzd665+8e0X7JTsASDM/Hr2rSwc0X2qz93iuA3udrjTH+ikQvpQk/1ZcMMLzRdAesqwBGPnsthzU0/CBlM/U8/8oEqGwX3pKw0XyeDNRAAZyXBo3MqkQtCpXhr942BRTjvWKhFz7OmCb2Ncfr8Tl2cBktooi6kJhr+djN5WYkB38Rr3akRgCl9qaU4dY=">>}
 %% ]}
@@ -155,7 +155,7 @@ get_shard_iterator(Payload, Timeout) ->
 %%
 %% Payload = [{<<"ExclusiveStartStreamName">>, binary()}, <- optional
 %%            {<<"Limit">>, integer()}] <- optional
-%% 
+%%
 %% Response = {ok, [{<<"HasMoreStreams">>, false},
 %%                  {<<"StreamNames">>, [<<"exampleStreamName">>]}]}
 list_streams(Payload) ->
@@ -186,7 +186,7 @@ merge_shards(Payload, Timeout) ->
 %%            {<<"PartitionKey">>, binary()}, <- required
 %%            {<<"SequenceNumberForOrdering">>, binary()}, <- optional
 %%            {<<"StreamName">>, binary()}] <- required
-%% 
+%%
 %% Response = {ok, [{<<"SequenceNumber">>, <<"21269319989653637946712965403778482177">>},
 %%                  {<<"ShardId">>, <<"shardId-000000000001">>}]}
 put_record(Payload) ->
@@ -201,7 +201,7 @@ put_record(Payload, Timeout) ->
 %% Payload = [{<<"StreamName">>, binary()}, <- required
 %%            {<<"ShardToSplit">>, binary()},      <- required
 %%            {<<"NewStartingHashKey">>, binary()}] <- required
-%% 
+%%
 %% Response = {ok, []}
 split_shard(Payload) ->
     split_shard(Payload, []).
