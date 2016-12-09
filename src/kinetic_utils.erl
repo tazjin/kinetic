@@ -7,6 +7,7 @@ endpoint("kinesis", "us-east-1") -> "kinesis.us-east-1.amazonaws.com";
 endpoint("kinesis", "us-west-1") -> "kinesis.us-west-1.amazonaws.com";
 endpoint("kinesis", "us-west-2") -> "kinesis.us-west-2.amazonaws.com";
 endpoint("kinesis", "eu-west-1") -> "kinesis.eu-west-1.amazonaws.com";
+endpoint("kinesis", "eu-central-") -> "kinesis.eu-central-1.amazonaws.com";
 endpoint("kinesis", "ap-northeast-1") -> "kinesis.ap-northeast-1.amazonaws.com";
 endpoint("kinesis", "ap-southeast-1") -> "kinesis.ap-southeast-1.amazonaws.com".
 

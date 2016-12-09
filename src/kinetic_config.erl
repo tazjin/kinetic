@@ -91,7 +91,8 @@ region("us-west-1" ++ _R) -> "us-west-1";
 region("us-west-2" ++ _R) -> "us-west-2";
 region("ap-northeast-1" ++ _R) -> "ap-northeast-1";
 region("ap-southeast-1" ++ _R) -> "ap-southeast-1";
-region("eu-west-1" ++ _R) -> "eu-west-1".
+region("eu-west-1" ++ _R) -> "eu-west-1";
+region("eu-central-1" ++ _R) -> "eu-central-1".
 
 get_aws_credentials(V, P, MetaData, Role)
         when V =:= undefined orelse P =:= undefined ->
